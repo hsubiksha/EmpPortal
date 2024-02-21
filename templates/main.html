@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portal</title>
+</head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+
+<body>
+<h1 align="center">Hello {{names}} !!</h1>
+<div class="logout">
+<h1><a href='/create' ><button class="buttonm">Create</button></a></h1>
+<h1><a href='/logout' ><button class="buttonm">Logout</button></a></h1>
+</div>
+
+        {% with messages = get_flashed_messages() %}
+         {% if messages %}
+               {% for message in messages %}
+                    <div class="alert">{{ message }}</div>
+               {% endfor %}
+         {% endif %}
+      {% endwith %}
+<br>
+    {% if data %}
+    <div class="tab">
+    <table border="2" padding = "5">
+         <tr>
+            <th>No</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Salary</th>
+            <th>Location</th>
+             <th>Actions</th>
+         </tr>
+         {% for d in data %}
+         <tr>
+            <td>{{d.id}}</td>
+            <td>{{d.first_name}}</td>
+            <td>{{d.last_name}}</td>
+            <td>{{d.age}}</td>
+            <td>{{d.salary}}</td>
+            <td>{{d.location}}</td>
+            <td><a href="/delete/{{d.id}}"><button id="del" class="colButton">Delete</button></a>
+            <a href="/updateForm/{{d.id}}"><button class="colButton">Update</button></a></td>
+         </tr>
+         {% endfor%}
+        {% else %}
+        <h1 align="center">No Records available to display</h1>
+        {% endif %}
+    </table>
+</div>
+</body>
+</html>
+<script>
+$(document).ready(function(){
+
+    $(".alert").hide(6000);
+
+});
+</script>

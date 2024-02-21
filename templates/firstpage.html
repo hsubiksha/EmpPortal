@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Portal</title>
+</head>
+<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+
+<body>
+    <div class="welcome">
+    <h1>Welcome to Employee Portal</h1>
+    </div>
+    <div class="login">
+        <form action = '/login' method ='GET'>
+            <input class="button" type="submit" value="Login" >
+        </form>
+        <h3 style="margin-right:20px;margin-left:20px;">or</h3>
+        <form action = '/register' method ='GET'>
+            <input class="button" type="submit" value="Register" >
+        </form>
+    </div>
+</body>
+</html>

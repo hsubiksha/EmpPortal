@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Page</title>
+</head>
+<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+
+
+<body>
+<div>
+    <h1 align="center">Update details of below Employee</h1>
+</div>
+<div class="up">
+<form action="/updated/{{res.id}}" method="POST">
+         <label>First Name</label>
+         <input type="text" name="first_name" value="{{res.first_name}}" placeholder="{{res.first_name}}"><br><br>
+         <label>Last Name</label>
+         <input type="text" name= "last_name" placeholder="{{res.last_name}}" value="{{res.last_name}}"><br><br>
+         <label>Age</label>
+         <input type="number" name="age" placeholder="{{res.age}}" value="{{res.age}}"><br><br>
+    <label>Salary</label>
+         <input type="number" name="salary" placeholder="{{res.salary}}" value="{{res.salary}}"><br><br>
+    <label>Location</label>
+         <input type="text" name="location" placeholder="{{res.location}}" value="{{res.location}}"><br><br>
+         <button type="submit" class="buttonup">Update</button>
+      </form>
+    </div>
+</body>
+</html>

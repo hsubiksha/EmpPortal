@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Employee</title>
+</head>
+<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+
+<body>
+<div>
+    <h2 align="center">Create Employee</h2>
+</div>
+<div class="create">
+<form action="/created" method="POST">
+         <label>First Name</label>
+         <input type="text" name="first_name" placeholder="first name..."><br><br>
+         <label>Last Name</label>
+         <input type="text" name= "last_name" placeholder="last name..."><br><br>
+         <label>Age</label>
+         <input type="number" name="age" placeholder="age.."><br><br>
+    <label>Salary</label>
+         <input type="number" name="salary" placeholder="salary.."><br><br>
+    <label>Location</label>
+         <input type="text" name="location" placeholder="location.."><br><br>
+         <button type="submit" class="button">Create</button>
+      </form>
+    </div>
+</body>
+</html>
