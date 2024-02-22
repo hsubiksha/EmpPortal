@@ -46,6 +46,7 @@ def getToLogin():
     if request.method =='GET':
         return render_template('login.html')
 
+# Route to Main Page, using session to store the username after login
 @app.route('/mainPage')
 def getToMainPage():
     emp = Employees.query.all()
