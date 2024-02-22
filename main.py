@@ -29,6 +29,7 @@ class Employees(db.Model):
 def getFirstPage():
     return render_template("firstpage.html")
 
+# Login Route which leads to main page if the login is successfull
 @app.route('/login', methods=['GET','POST'])
 def getToLogin():
     if request.method=='POST':
