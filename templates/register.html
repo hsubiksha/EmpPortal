@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+<body>
+<div class="create">
+<form action="/registered" method="POST">
+        <label>Email ID</label>
+         <input type="text" name="email_id" placeholder="email id..."><br><br>
+         <label>First Name</label>
+         <input type="text" name="first_name" placeholder="first name..."><br><br>
+         <label>Last Name</label>
+         <input type="text" name= "last_name" placeholder="last name..."><br><br>
+         <label>Password</label>
+         <input type="text" name="password" placeholder="password.."><br><br>
+         <button type="submit" class="button">Register</button>
+      </form>
+    </div>
+</body>
+</html>
