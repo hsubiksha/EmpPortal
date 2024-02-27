@@ -3,6 +3,8 @@ from flask_session import *
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from marshmallow_sqlalchemy import SQLAlchemySchema, auto_field
+
+# Below creates table in sqllite
 from sqlalchemy import create_engine
 # from sqlalchemy import Table, Column, Integer, String, MetaData
 # meta = MetaData()
@@ -127,6 +129,7 @@ def getToLoginAgain():
     email_id = request.form.get("email_id")
     password = request.form.get("password")
     if first_name != '' and last_name != '':
+        # Below is used to insert data into respective tables.
         u = User(email_id=email_id, first_name=first_name, last_name=last_name, password=password)
         db.session.add(u)
         db.session.commit()
